@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: tfbldr
+Version: 0.0.1
+Summary: Deep Learning tools for Tensorflow
+Home-page: http://github.com/kastnerkyle/tfbldr/
+Author: Kyle Kastner
+Author-email: kastnerkyle@gmail.com
+License: BSD 3-clause
+Description: Tensorflow tools and experiments
+        
+        Use at your own risk
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering

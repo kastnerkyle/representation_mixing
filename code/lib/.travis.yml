@@ -1,0 +1,30 @@
+language: python
+# make it explicit that we favor the new container-based travis workers
+sudo: false
+addons:
+  apt:
+    packages:
+      # Only used by the DISTRIB="ubuntu" setting
+      - libatlas3gf-base
+      - libatlas-dev
+      - python-numpy
+      - python-scipy
+env:
+  matrix:
+    - DISTRIB="conda" PYTHON_VERSION="2.7"
+      NUMPY_VERSION="1.13.1" SCIPY_VERSION="0.19.0" TF_VERSION="1.4.1"
+    # This environment tests the newest supported anaconda env
+    - DISTRIB="conda" PYTHON_VERSION="2.7" INSTALL_MKL="true"
+      NUMPY_VERSION="1.13.1" SCIPY_VERSION="0.19.0" TF_VERSION="1.4.1"
+    # This environment tests the newest supported anaconda env
+    #- DISTRIB="conda" PYTHON_VERSION="3.4" INSTALL_MKL="true"
+    #  NUMPY_VERSION="1.8.2" SCIPY_VERSION="0.14.0"
+
+install: source continuous_integration/install.sh
+script: bash continuous_integration/test_script.sh
+after_success:
+    # Ignore coveralls failures as the coveralls server is not very reliable
+    # but we don't want travis to report a failure in the github UI just
+    # because the coverage report failed to be published.
+    - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
+cache: apt

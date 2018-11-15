@@ -1,0 +1,2 @@
+text processing utils from Keith Ito
+replaced inflect engine with https://github.com/ianfieldhouse/number_to_words
