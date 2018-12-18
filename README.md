@@ -6,6 +6,9 @@ Try the demo! https://colab.research.google.com/github/kastnerkyle/representatio
 
 Samples site: https://s3.amazonaws.com/representation-mixing-site/index.html
 
+# Abstract
+Recent character and phoneme-based parametric TTS systems using deep learning have shown strong performance in natural speech generation. However, the choice between character or phoneme input can create serious limitations for practical deployment, as direct control of pronunciation is crucial in certain cases. We demonstrate a simple method for combining multiple types of linguistic information in a single encoder, named representation mixing, enabling flexible choice between character, phoneme, or mixed representations during inference. Experiments and user studies on a public audiobook corpus show the efficacy of our approach.
+
 # Architecture Diagram
 <div style="text-align:center">
 <img width="110" height="200" src="https://raw.githubusercontent.com/kastnerkyle/representation_mixing/master/figures/white.png"/>
